@@ -9,14 +9,9 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-
-import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
-
 import io.appium.java_client.remote.MobileCapabilityType;
 
 public class StepDefinitions {
@@ -57,7 +52,6 @@ public class StepDefinitions {
 		driver.findElement(By.id("com.aa.android.qa:id/lastname")).sendKeys("Points");
 		driver.findElement(By.id("com.aa.android.qa:id/password")).sendKeys("testing");
 		driver.findElement(By.id("com.aa.android.qa:id/login_button")).click();
-
 	}
 
 }

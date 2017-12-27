@@ -41,7 +41,7 @@ public class AppiumServerJava {
 
 		// Build the Appium Service
 		builder = new AppiumServiceBuilder();
-		builder.usingDriverExecutable(new File("/home/ninad/.linuxbrew/bin/node"));
+		builder.usingDriverExecutable(new File("/home/ninad/.linuxbrew/Cellar/node/9.3.0_1/bin/node"));
 		builder.withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js"));
 		builder.withIPAddress("0.0.0.0");
 		builder.usingPort(4723);

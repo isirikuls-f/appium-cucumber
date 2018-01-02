@@ -41,8 +41,8 @@ public class AppiumServerJava {
 
 		// Build the Appium Service
 		builder = new AppiumServiceBuilder();
-		builder.usingDriverExecutable(new File("/home/ninad/.linuxbrew/Cellar/node/9.3.0_1/bin/node"));
-		builder.withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js"));
+		builder.usingDriverExecutable(new File("/home/ninad/.linuxbrew/bin/node"));
+		builder.withAppiumJS(new File("/home/ninad/.linuxbrew/lib/node_modules/appium/build/lib/main.js"));
 		builder.withIPAddress("0.0.0.0");
 		builder.usingPort(4723);
 		/*builder.usingAnyFreePort();*/
@@ -52,8 +52,8 @@ public class AppiumServerJava {
 
 		// Start the server with the builder
 		try {
-		service = builder.build();
-		/*service = AppiumDriverLocalService.buildService(builder);*/
+		/*service = builder.build();*/
+		service = AppiumDriverLocalService.buildService(builder);
 		service.start();
 		} catch (NullPointerException e) {
 			e.printStackTrace();

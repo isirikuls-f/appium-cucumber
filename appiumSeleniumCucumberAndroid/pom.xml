@@ -26,23 +26,15 @@
 			<artifactId>selenium-java</artifactId>
 			<version>3.4.0</version>
 		</dependency>
-
 		<dependency>
 			<groupId>io.appium</groupId>
 			<artifactId>java-client</artifactId>
 			<version>6.0.0-BETA2</version>
 		</dependency>
-
 		<dependency>
 			<groupId>io.selendroid</groupId>
 			<version>0.17.0</version>
 			<artifactId>selendroid-standalone</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>io.selendroid</groupId>
-			<version>0.17.0</version>
-			<artifactId>selendroid-client</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>info.cukes</groupId>
@@ -66,6 +58,11 @@
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
 			<version>21.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.selendroid</groupId>
+			<version>0.17.0</version>
+			<artifactId>selendroid-standalone</artifactId>
 		</dependency>
 	</dependencies>
 </project>

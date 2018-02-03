@@ -14,7 +14,7 @@ public class StepDefinitions {
 	AppiumDriver<MobileElement> driver;
 
 	@Before("@setup")
-	public void setUp() {
+	public void setUp() throws Throwable {
 
 		int port = 4723;
 		try {

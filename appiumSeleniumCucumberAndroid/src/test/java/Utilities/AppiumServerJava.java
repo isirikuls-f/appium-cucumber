@@ -1,5 +1,7 @@
 package Utilities;
 
+import static org.junit.Assert.assertTrue;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -14,6 +16,7 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
 
+
 public class AppiumServerJava {
 
 	public AppiumDriverLocalService service;
@@ -23,9 +26,13 @@ public class AppiumServerJava {
 	AppiumDriver<MobileElement> driver;
 	File root = new File(System.getProperty("user.dir"));
 	File app = new File(root, "/src/test/api/app-qa.apk");
+	File testLogFile = new File("/home/ninad/eclipse-workspace/log.txt");
+    
 
-	public AppiumDriver<MobileElement> startServer() {
+	public AppiumDriver<MobileElement> startServer() throws Exception {
 
+		testLogFile.createNewFile();
+		
 		// apk Capabilities
 		dc = new DesiredCapabilities();
 		dc.setCapability("BROWSER_NAME", "Android");
@@ -52,9 +59,10 @@ public class AppiumServerJava {
 
 		// Start the server with the builder
 		try {
-		/*service = builder.build();*/
-		service = AppiumDriverLocalService.buildService(builder);
+		service = builder.withLogFile(testLogFile).build();
+		/*service = AppiumDriverLocalService.buildService(builder);*/
 		service.start();
+		assertTrue(testLogFile.exists());
 		} catch (NullPointerException e) {
 			e.printStackTrace();
 		}

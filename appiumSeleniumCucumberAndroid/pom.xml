@@ -32,11 +32,6 @@
 			<version>6.0.0-BETA2</version>
 		</dependency>
 		<dependency>
-			<groupId>io.selendroid</groupId>
-			<version>0.17.0</version>
-			<artifactId>selendroid-standalone</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-java</artifactId>
 			<version>1.2.5</version>
@@ -53,16 +48,6 @@
 			<artifactId>cucumber-junit</artifactId>
 			<version>1.2.5</version>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>21.0</version>
-		</dependency>
-		<dependency>
-			<groupId>io.selendroid</groupId>
-			<version>0.17.0</version>
-			<artifactId>selendroid-standalone</artifactId>
 		</dependency>
 	</dependencies>
 </project>

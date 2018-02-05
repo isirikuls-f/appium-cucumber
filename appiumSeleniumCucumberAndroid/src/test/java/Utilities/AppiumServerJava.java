@@ -10,7 +10,7 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
+/*import io.appium.java_client.android.AndroidDriver;*/
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
@@ -69,7 +69,7 @@ public class AppiumServerJava {
 		
 		System.out.println("Appium URL " + service.getUrl().toString());
 			
-		driver = new AndroidDriver<MobileElement>(service.getUrl(), dc);
+		driver = new AppiumDriver<MobileElement>(service.getUrl(), dc);
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);		
 		return driver;
 	}

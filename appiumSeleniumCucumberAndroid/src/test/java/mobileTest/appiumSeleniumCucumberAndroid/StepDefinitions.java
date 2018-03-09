@@ -1,7 +1,7 @@
 package mobileTest.appiumSeleniumCucumberAndroid;
 
 import org.openqa.selenium.By;
-import Utilities.AppiumServerJava;
+import Utilities.AppiumServer;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -10,7 +10,7 @@ import io.appium.java_client.MobileElement;
 
 public class StepDefinitions {
 
-	AppiumServerJava appiumServer = new AppiumServerJava();
+	AppiumServer appiumServer = new AppiumServer();
 	AppiumDriver<MobileElement> driver;
 
 	@Before("@setup")

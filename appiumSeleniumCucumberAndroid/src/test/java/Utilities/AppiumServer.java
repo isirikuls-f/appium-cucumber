@@ -17,7 +17,7 @@ import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
 
 
-public class AppiumServerJava {
+public class AppiumServer{
 
 	public AppiumDriverLocalService service;
 	public AppiumServiceBuilder builder;

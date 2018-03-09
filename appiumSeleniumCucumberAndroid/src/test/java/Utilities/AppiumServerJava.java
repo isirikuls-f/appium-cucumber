@@ -1,6 +1,6 @@
 package Utilities;
 
-import static org.junit.Assert.assertTrue;
+/*import static org.junit.Assert.assertTrue;*/
 
 import java.io.File;
 import java.io.IOException;
@@ -26,17 +26,18 @@ public class AppiumServerJava {
 	AppiumDriver<MobileElement> driver;
 	File root = new File(System.getProperty("user.dir"));
 	File app = new File(root, "/src/test/api/app-qa.apk");
-	File testLogFile = new File("/home/ninad/eclipse-workspace/log.txt");
+	/*File testLogFile = new File("/home/ninad/eclipse-workspace/log.txt");*/
     
 
 	public AppiumDriver<MobileElement> startServer() throws Exception {
 
-		testLogFile.createNewFile();
+		/*testLogFile.createNewFile();*/
 		
 		// apk Capabilities
 		dc = new DesiredCapabilities();
 		dc.setCapability("BROWSER_NAME", "Android");
 		dc.setCapability(MobileCapabilityType.PLATFORM_NAME, Platform.ANDROID);
+		dc.setCapability("platformName", "Android");
 		dc.setCapability("deviceName", "nexus5");
 		dc.setCapability("app", app.getAbsolutePath());
 		dc.setCapability("appPackage", "com.aa.android.qa");
@@ -59,15 +60,15 @@ public class AppiumServerJava {
 
 		// Start the server with the builder
 		try {
-		service = builder.withLogFile(testLogFile).build();
-		/*service = AppiumDriverLocalService.buildService(builder);*/
+		/*service = builder.withLogFile(testLogFile).build();*/
+		service = AppiumDriverLocalService.buildService(builder);
 		service.start();
-		assertTrue(testLogFile.exists());
+		/*assertTrue(testLogFile.exists());*/
 		} catch (NullPointerException e) {
 			e.printStackTrace();
 		}
 		
-		System.out.println("Appium URL " + service.getUrl().toString());
+		/*System.out.println("Appium URL " + service.getUrl().toString());*/
 			
 		driver = new AppiumDriver<MobileElement>(service.getUrl(), dc);
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);		

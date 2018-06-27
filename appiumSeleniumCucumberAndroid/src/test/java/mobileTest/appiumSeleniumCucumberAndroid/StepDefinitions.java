@@ -5,13 +5,15 @@ import Utilities.AppiumServer;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
-import io.appium.java_client.AppiumDriver;
+/*import io.appium.java_client.AppiumDriver;*/
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.MobileElement;
 
 public class StepDefinitions {
 
 	AppiumServer appiumServer = new AppiumServer();
-	AppiumDriver<MobileElement> driver;
+	/* AppiumDriver<MobileElement> driver; */
+	AndroidDriver<MobileElement> driver;
 
 	@Before("@setup")
 	public void setUp() throws Throwable {
@@ -39,9 +41,9 @@ public class StepDefinitions {
 
 	@Given("^I log into the app$")
 	public void logIn() throws Throwable {
-		driver.findElement(By.id("com.aa.android.qa:id/username")).sendKeys("5X78V88");
-		driver.findElement(By.id("com.aa.android.qa:id/lastname")).sendKeys("Points");
-		driver.findElement(By.id("com.aa.android.qa:id/password")).sendKeys("testing");
+		driver.findElement(By.id("com.aa.android.qa:id/username")).setValue("5X78V88");
+		driver.findElement(By.id("com.aa.android.qa:id/lastname")).setValue("Points");
+		driver.findElement(By.id("com.aa.android.qa:id/password")).setValue("testing");
 		driver.findElement(By.id("com.aa.android.qa:id/login_button")).click();
 	}
 }

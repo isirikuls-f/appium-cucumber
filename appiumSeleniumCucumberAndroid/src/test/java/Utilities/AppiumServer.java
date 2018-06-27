@@ -8,31 +8,30 @@ import java.net.ServerSocket;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import io.appium.java_client.AppiumDriver;
+/*import io.appium.java_client.AppiumDriver;*/
 import io.appium.java_client.MobileElement;
-/*import io.appium.java_client.android.AndroidDriver;*/
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
 
-
-public class AppiumServer{
+public class AppiumServer {
 
 	public AppiumDriverLocalService service;
 	public AppiumServiceBuilder builder;
 	public DesiredCapabilities cap;
 	public DesiredCapabilities dc;
-	AppiumDriver<MobileElement> driver;
+	/* AppiumDriver<MobileElement> driver; */
+	AndroidDriver<MobileElement> driver;
 	File root = new File(System.getProperty("user.dir"));
 	File app = new File(root, "/src/test/api/app-qa.apk");
-	/*File testLogFile = new File("/home/ninad/eclipse-workspace/log.txt");*/
-    
+	/* File testLogFile = new File("/home/ninad/eclipse-workspace/log.txt"); */
 
-	public AppiumDriver<MobileElement> startServer() throws Exception {
+	public AndroidDriver<MobileElement> startServer() throws Exception {
 
-		/*testLogFile.createNewFile();*/
-		
+		/* testLogFile.createNewFile(); */
+
 		// apk Capabilities
 		dc = new DesiredCapabilities();
 		dc.setCapability("BROWSER_NAME", "Android");
@@ -53,25 +52,26 @@ public class AppiumServer{
 		builder.withAppiumJS(new File("/home/ninad/.linuxbrew/lib/node_modules/appium/build/lib/main.js"));
 		builder.withIPAddress("0.0.0.0");
 		builder.usingPort(4723);
-		/*builder.usingAnyFreePort();*/
+		/* builder.usingAnyFreePort(); */
 		builder.withCapabilities(cap);
 		builder.withArgument(GeneralServerFlag.SESSION_OVERRIDE);
 		builder.withArgument(GeneralServerFlag.LOG_LEVEL, "error");
 
 		// Start the server with the builder
 		try {
-		/*service = builder.withLogFile(testLogFile).build();*/
-		service = AppiumDriverLocalService.buildService(builder);
-		service.start();
-		/*assertTrue(testLogFile.exists());*/
+			/* service = builder.withLogFile(testLogFile).build(); */
+			service = AppiumDriverLocalService.buildService(builder);
+			service.start();
+			/* assertTrue(testLogFile.exists()); */
 		} catch (NullPointerException e) {
 			e.printStackTrace();
 		}
-		
-		/*System.out.println("Appium URL " + service.getUrl().toString());*/
-			
-		driver = new AppiumDriver<MobileElement>(service.getUrl(), dc);
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);		
+
+		/* System.out.println("Appium URL " + service.getUrl().toString()); */
+
+		/* driver = new AppiumDriver<MobileElement>(service.getUrl(), dc); */
+		driver = new AndroidDriver<MobileElement>(service.getUrl(), dc);
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		return driver;
 	}
 

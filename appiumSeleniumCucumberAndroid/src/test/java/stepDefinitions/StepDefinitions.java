@@ -1,4 +1,4 @@
-package mobileTest.appiumSeleniumCucumberAndroid;
+package stepDefinitions;
 
 import org.openqa.selenium.By;
 import Utilities.AppiumServer;

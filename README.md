@@ -1,3 +1,5 @@
-This project is a proof of concept to progrmatically start the Appium Server
+This project is a proof of concept to programatically start the Appium Server.
 
-Runs on Android Emulator only
+Appium Server is the NodeJs version.
+
+Runs on Android Emulator only.

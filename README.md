@@ -1,7 +1,7 @@
 # Front-End QA Automation - Native App 
 
-This is a Cucumber - Appium Framework
-Currently only designed to test Android devices
+* This is a Cucumber - Appium Framework
+* Currently only designed to test Android devices
 
 ## Getting Started
 

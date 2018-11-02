@@ -21,6 +21,8 @@ npm i appium
 
 ### Installing
 
+There is no need to start the appium server manually, as the program will do so upon execution.
+
 From the directory of the POM.xml :
 
 ```
@@ -41,7 +43,7 @@ This project is ready to deploy on Jenkins.
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [Cucumber](https://cucumber.io/) - Framework
 * [Selenium](https://www.seleniumhq.org/) - WebDriver
-* [Appium](http://appium.io/)
+* [Appium](http://appium.io/) -  Native App automation framework
 
 ## Contributing
 

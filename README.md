@@ -6,13 +6,13 @@ Currently only designed to test Android devices
 ## Getting Started
 
 ```
-git clone https://github.com/telangn/cucumber-selenium.git
+git clone https://github.com/telangn/appium-cucumber.git
 ```
 
 ### Prerequisites
 
 * Android Studio configured to launch an emulator
-* A native app SDK
+* A native app SDK to test with
 
 * [Appium](https://www.npmjs.com/package/appium)
 ```

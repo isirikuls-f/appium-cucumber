@@ -11,6 +11,7 @@ git clone https://github.com/telangn/appium-cucumber.git
 
 ### Prerequisites
 
+* Maven Installed
 * Android Studio configured to launch an emulator
 * A native app SDK to test with
 * Configure Android Path on your environment variables
@@ -39,7 +40,7 @@ Or..
 mvn verify
 ```
 
-You can use the [uiautomatorviewer](https://developer.android.com/training/testing/ui-testing/uiautomator-testing) to inspect elements on Android devices. or you can use [Appium Desktop](https://github.com/appium/appium-desktop)
+You can use the [uiautomatorviewer](https://developer.android.com/training/testing/ui-testing/uiautomator-testing) to inspect elements on Android devices, or you can use [Appium Desktop](https://github.com/appium/appium-desktop)
 
 ## Deployment
 

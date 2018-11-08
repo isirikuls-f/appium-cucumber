@@ -13,6 +13,9 @@ git clone https://github.com/telangn/appium-cucumber.git
 
 * Android Studio configured to launch an emulator
 * A native app SDK to test with
+* Configure Android Path on your environment variables
+    ANDROID_HOME: root android sdk directory
+    PATH: ANDROID_HOME + the following paths = platform-tools, tools, tools/bin
 
 * [Appium](https://www.npmjs.com/package/appium)
 ```
